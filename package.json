@@ -37,9 +37,10 @@
     "compile-watch": "tsc -p tsconfig.json --watch",
     "lint": "eslint . --ext .ts",
     "lint-watch": "npm-watch lint",
-    "bundle": "./tools/bundle.js --dev --dist",
+    "bundle": "node tools/bundle.js --dev --dist",
     "bundle-watch": "npm-watch bundle",
-    "server": "./tools/local_server.py 8088",
+    "server": "node tools/server.js 8088",
+    "dev": "npm run compile && npm run bundle && npm run server",
     "deploy-all": "./deploy-jpp.sh && ./deploy-modulo.sh && ./deploy-modulo-dev.sh",
     "electron": "electron ."
   },
